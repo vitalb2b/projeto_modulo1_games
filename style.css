@@ -1,0 +1,91 @@
+
+
+.Tabla{
+
+    margin: auto;
+    width: 252px;
+    padding-top: 100px;
+}
+
+
+.espaco{
+
+    width: 80px;
+    height: 60px;
+    border: 2px solid black;
+    float: left;
+    text-align: center;
+    padding-top: 20px;
+
+}
+
+.Player p{
+
+    margin: auto;
+    margin-top: 40px;
+    width: 200px;
+    font-size: 25px;   
+}
+
+#images{
+    height: 30px;
+    width: 30px;
+    float: right;
+}
+
+
+
+#a1{
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+}
+#a2{
+    border-top: 2px solid white;
+}
+#a3{
+    border-top: 2px solid white;
+    border-right: 2px solid white;
+}
+
+
+#b1{
+    border-left: 2px solid white;
+}
+
+#b3{
+    border-right: 2px solid white;
+}
+
+#c1{
+    border-bottom: 2px solid white;
+    border-left: 2px solid white;
+}
+#c2{
+    border-bottom: 2px solid white;
+}
+#c3{
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+}
+
+
+.btn-start {
+    
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+    text-align: center;
+    
+    /* Smoothing out hover using css3 transitions, if not, the pressed button effect looks a bit hard */
+    transition: all 0.2s ease;
+  
+    /* Size */
+    width: 10%;
+    height: 45px;
+    font-size: 120%;
+    
+    background: #e8103b;
+    box-shadow: 0 6px #890923;
+    color: #fff;
+  
+}
