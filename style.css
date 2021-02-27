@@ -1,12 +1,46 @@
 
 
+
 .Tabla{
 
-    margin: auto;
+    position: absolute;
+    margin-left: 410px;
+    top: 68%;
     width: 252px;
-    padding-top: 100px;
+    transform: translate(-20%,-150%);
+       
 }
 
+.slider{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /*fullscreen*/
+    background:linear-gradient(to left, #ba7453, #d1a984);
+    z-index: -1;/*drop to the back*/
+}
+
+section{
+    display: flex;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.backImage img{
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.backImage{
+
+    width: 100%;
+    height: 60%;
+}
 
 .espaco{
 
@@ -16,15 +50,24 @@
     float: left;
     text-align: center;
     padding-top: 20px;
-
+    
 }
 
-.Player p{
+.headline{
 
-    margin: auto;
-    margin-top: 40px;
-    width: 200px;
-    font-size: 25px;   
+    position: absolute;
+    top: 70%;
+    left: 0%;
+    margin-left: 6%;
+    width: 10%;
+    font-size: 90px;
+    font-family: sans-serif;
+    color: white;
+    line-height: 110px;
+    float: left;
+    transform: translate(-20%,-150%);
+    z-index: 0;/*drop to the back*/
+
 }
 
 #images{
@@ -33,43 +76,43 @@
     float: right;
 }
 
-
-
 #a1{
-    border-top: 2px solid white;
-    border-left: 2px solid white;
+    border-top: none;
+    border-left: none ;
 }
 #a2{
-    border-top: 2px solid white;
+    border-top: none;
 }
 #a3{
-    border-top: 2px solid white;
-    border-right: 2px solid white;
+    border-top: none;
+    border-right: none;
 }
 
-
 #b1{
-    border-left: 2px solid white;
+    border-left: none;
 }
 
 #b3{
-    border-right: 2px solid white;
+    border-right: none;
 }
 
 #c1{
-    border-bottom: 2px solid white;
-    border-left: 2px solid white;
+    border-bottom: none;
+    border-left: none;
 }
+
 #c2{
-    border-bottom: 2px solid white;
+    border-bottom: none;
 }
+
 #c3{
-    border-bottom: 2px solid white;
-    border-right: 2px solid white;
+    border-bottom: none;
+    border-right: none;
+    
 }
 
 
-.btn-start {
+.btn-reset {
     
     cursor: pointer;
     border: none;
@@ -80,12 +123,49 @@
     transition: all 0.2s ease;
   
     /* Size */
-    width: 10%;
+    width: 138%;
     height: 45px;
-    font-size: 120%;
-    
+    font-size: 120%;   
     background: #e8103b;
     box-shadow: 0 6px #890923;
     color: #fff;
-  
+}
+
+.Button_down{    
+    padding-left: 450px;
+    position: absolute;
+    bottom: 30%;
+}
+
+
+.playerImage img{
+    position: absolute;
+    margin-left: 150px;
+    margin-top: 90px;
+}
+
+.playerImage p{
+    
+    position: absolute;
+    margin-left: 230px;
+    margin-top: 50px;
+}
+
+#imageJuju{
+    position: absolute;
+    margin-left: 540px;
+    margin-top: 90px;
+
+}
+
+.backImage::after{
+
+    content: "";
+    background: black;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    opacity: 0.3;
+    top: 0;
 }

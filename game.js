@@ -4,11 +4,33 @@
 const play1 = "X";
 const play2 = "O";
 
+const backImage = document.querySelector('.backImage');
+const slider = document.querySelector('.slider');
+
 
 let gameTime = play1;
 let gameOver = false;
 
 
+const tl = new TimelineMax();
+
+tl.fromTo(
+    backImage,
+    1,
+     {height: "0%" },
+     {height: "80%", ease: Power2.easeInOut} 
+).fromTo( 
+    backImage,
+    1.2,
+    {width: "100%"}, 
+    {width: "80%",ease: Power2.easeInOut}
+).fromTo(
+    slider,
+    1.2,
+    {x:"-100%"},
+    {x:'0%', ease: Power2.easeInOut},
+    "-=1.2"
+);
 
 
 function playerMove(){
@@ -31,36 +53,50 @@ function playerMove(){
 }
 
 playerMove();
-rederSpaces()
+rederSpaces();
 
- function rederSpaces(){
+function rederSpaces(){
 
     let spaces = document.getElementsByClassName('espaco');
     for(let i =0; i < spaces.length; i++){
 
         spaces[i].addEventListener('click', function(){
 
+            console.log(spaces[i]);
+
             if(gameOver){ return;}
 
-            if(this.getElementsByClassName('img').length == 0){
+            if(spaces[i].attributes[2].value != ""){
 
-                if(gameTime == play1){
+                alert(`Espaço preenchido`);
 
-                    this.innerHTML = "<img src= /Users/vitalb2b/Documents/jogoVelha_project/Images/s2.jpeg  height='30' width='30' >";
-                    this.setAttribute('jogada', play1);
 
-                    gameTime = play2
-                }else{
 
-                    this.innerHTML = "<img src= /Users/vitalb2b/Documents/jogoVelha_project/Images/circle.jpeg height='30' width='30'> ";
-                    this.setAttribute('jogada', play2);
+            }else{
+
+                if(this.getElementsByClassName('img').length == 0){
+
+                    if(gameTime == play1){
+    
+                        this.innerHTML = "<img src= /Users/vitalb2b/Documents/jogoVelha_project/Images/s2.jpeg  height='30' width='30' >";
+                        this.setAttribute('play', play1);
+    
+                        gameTime = play2
+                    }else{
+    
+                        this.innerHTML = "<img src= /Users/vitalb2b/Documents/jogoVelha_project/Images/circle.jpeg height='30' width='30'> ";
+                        this.setAttribute('play', play2);
+                        
+                        gameTime = play1;
+                    }
+                    playerMove();
+                    checkWinner();
                     
-                    gameTime = play1;
                 }
-                playerMove();
-                checkWinner();
-                
+
             }
+                
+          
         })
     }
 
@@ -82,6 +118,14 @@ async function checkWinner(){
     let c2 = document.getElementById("c2").getAttribute("play");
     let c3 = document.getElementById("c3").getAttribute("play");
 
+    let btn_reset = document.querySelector('.btn-reset').addEventListener('click', () => {
+        resetGame();
+        console.log("Aqui!!!")
+        
+    })
+ 
+ 
+ 
     let winner = '';
 
 
@@ -111,7 +155,7 @@ async function checkWinner(){
                 await sleep (50);
                 alert(`O gahador foi ${winner}`);
             }
-
+            
 }
 
 
@@ -119,3 +163,16 @@ function sleep (ms){
 
     return new Promise(resolve => setTimeout(resolve, ms));
 }
+
+
+
+
+function resetGame(){
+    var mySong = document.getElementById("songs");
+    mySong.play();
+    return document.location.reload(true);
+ 
+}
+
+
+
