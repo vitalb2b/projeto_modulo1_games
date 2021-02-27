@@ -13,4 +13,4 @@ Prerequisites
 
 No hardware prerequisites needed. Just use your browser.
 
-Click here to run the game.
+Click [here](https://www.google.com) to run the game.
