@@ -1,8 +1,6 @@
+# projeto_modulo1_games
 
-
-GAME OF VELHAS
-
-
+#GAME OF VELHAS
 
 
 Game rules
