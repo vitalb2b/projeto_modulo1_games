@@ -71,6 +71,10 @@ section{
 }
 
 #images{
+
+    position: absolute;
+    top: 18%;
+    margin-left: 70%;
     height: 30px;
     width: 30px;
     float: right;
